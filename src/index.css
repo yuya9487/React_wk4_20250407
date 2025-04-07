@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply min-h-screen bg-black text-white;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  .main-layout {
+    @apply grid min-h-screen;
+    grid-template-areas: 
+      'header'
+      'content'
+      'footer'
+    ;
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+  }
+
+  .header {
+    @apply grid-area-header;
+  }
+
+  .content {
+    @apply grid-area-content;
+  }
+
+  .footer {
+    @apply grid-area-footer;
+  }
+}
+
+/* 添加網格區域的 Tailwind 變體 */
+@layer utilities {
+  .grid-area-header {
+    grid-area: header;
+  }
+  
+  .grid-area-content {
+    grid-area: content;
+  }
+  
+  .grid-area-footer {
+    grid-area: footer;
+  }
+}
